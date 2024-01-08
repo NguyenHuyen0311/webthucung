@@ -1,0 +1,24 @@
+/* Color */
+:root {
+    --main-color: #222a63;
+    --sub-color: #23539c;
+}
+
+/* Button */
+.btn.btn-primary.button-search {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.btn.btn-primary.button-search:hover {
+    background-color: var(--sub-color);
+    border-color: var(--sub-color);
+}   
+
+/* Text */
+.text-shadow-title h1{
+    color: var(--main-color);
+    font-size: 50px;
+    text-shadow: 4px 1px 2px var(--sub-color);
+    text-transform: uppercase;
+}

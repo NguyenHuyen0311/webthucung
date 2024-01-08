@@ -1,0 +1,92 @@
+/* Mobile */
+@media (max-width: 740px) {
+    .navbar-logo {
+        width: 120px;
+        height: auto;
+    }
+
+    .navbar-cart-icon {
+        margin-right: 40px;
+    } 
+    
+    .navbar-user-icon {
+        margin-right: 80px;
+    }
+
+    .header-title {
+        margin: 0;
+    }
+
+    .img-banner {
+        .img-banner {
+            height: 50%;
+        }
+    }
+
+    .header-sub-title h4 {
+        margin-top: 10px;
+    }
+
+    .service-2 .row {
+        flex-wrap: wrap;
+    }
+}
+
+/* Tablet & PC độ phân giải thấp */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .navbar-cart-icon {
+        margin-right: 40px;
+    } 
+    
+    .navbar-user-icon {
+        margin-right: 80px;
+    }
+
+    .form-search {
+        margin-left: 17px;
+        margin-right: 0;
+        justify-content: center;
+        align-items: center;
+        width: 230px;
+    }
+
+    .header-title {
+        text-align: left;
+        margin: 10%;
+    }
+
+    .header-sub-title h4 {
+        margin-top: 10px;
+    }
+}
+
+/* PC */
+@media (min-width: 1024px) {
+    .form-search {
+        margin-left: 17px;
+        margin-right: 0;
+        justify-content: center;
+        align-items: center;
+        width: 230px;
+    }
+
+    .header-cart-icon, .header-user-icon {
+        font-size: 150%;
+    }
+
+    .navbar-logo {
+        margin-left: 50px;
+    }
+
+    .contact-item_title--main {
+        font-size: 20px;
+    }
+}
+
+/* Special */
+@media (min-width: 990px) and (max-width: 1050px) {
+    .navbar-cart-icon,
+    .navbar-user-icon {
+        margin-right: 0;
+    } 
+}

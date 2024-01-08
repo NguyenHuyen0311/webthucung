@@ -1,0 +1,590 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: #333333; 
+    font-family: 'Muli', sans-serif;
+    line-height: 1.2;
+    font-size: 14px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Navbar Header */
+.navbar-full {
+    position: relative;
+}
+
+.navbar-button {
+    position: absolute;
+    right: 0;
+}
+
+.nav-item a:hover {
+    background-color: rgb(34, 42, 99, 0.04);
+}
+
+a.nav-link.active.navbar-page {
+    color: var(--main-color);
+}
+
+.navbar-logo {
+    width: 150px;
+    height: auto;
+}
+
+input.customer-input::placeholder {
+    color: var(--main-color); 
+}
+
+.navbar-icon {
+    display: flex;
+}
+
+.navbar-cart-icon, .navbar-user-icon {
+    font-size: 150%;
+    color: var(--main-color);
+    margin: 20px;
+}
+
+.navbar-cart-icon:hover, .navbar-user-icon:hover {
+    color: var(--sub-color);
+    cursor: pointer;
+}
+
+/* Banner Header */
+.banner-header {
+    width: 100%;
+}
+
+.header-title {
+    margin-left: 20%;
+}
+
+.header-sub-title h4{
+    width: 350px;
+    text-align: left;
+    font-size: 15px;
+    margin: 0;
+    margin-top: 150px;
+    border-bottom: var(--main-color) solid 2px;
+}
+
+.header-main-title h1{
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.5s ease; 
+}
+
+.header-main-title h1:hover {
+    transform: translateX(10px);
+}
+
+.header-end-title h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.banner-button {
+    width: 30%;
+    margin: 20px 0;
+}
+
+a.banner-button_click {
+    text-decoration: none;
+    color: #fff;
+}
+
+.banner-button-title {
+    vertical-align: middle;
+}
+
+.banner-button-icon {
+    font-size: 20px;
+    margin-left: 15px;
+    vertical-align: middle;
+    margin: 5px 20px;
+}
+
+.img-banner {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Content */
+/* Giới Thiệu */
+.Introduce-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Introduce-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Introduce-description-title {
+    border: 2px solid var(--main-color);
+    box-shadow: 5px 7px var(--sub-color);
+    border-radius: 3px;
+}
+
+.Introduce-title {
+    color: var(--main-color);
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.Introduce-text {
+    font-style: italic;
+    margin-left: 10px;
+}
+
+/* Dịch Vụ */
+.service-all {
+    position: relative;
+}
+
+.service-banner-title {
+    height: 300px;
+}
+
+.service-all .row {
+    margin-left: 0;
+}
+
+.service-title {
+    width: 100%;
+    height: 300px;
+    background-color: transparent;
+    background-image: linear-gradient(0, #4883fb, #3a437e);
+    opacity: 0.9;
+    position: absolute;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+} 
+
+.service-title-main, 
+.service-title-sub{
+    color: #fff;
+} 
+
+button.btn.btn-light.service-button {
+    width: 70%;
+    padding: 10px;
+    color: var(--sub-color);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+button.btn.btn-light.service-button:hover {
+    color: #fff;
+    background-color: var(--sub-color);
+    border-color: var(--sub-color);
+}
+
+/* Dịch Vụ 1 */
+.service-1,
+.service-2 {
+    padding: 40px;
+}
+
+.service-1-info,
+.service-2-info {
+    letter-spacing: 1px;
+}
+
+.service-1-title,
+.service-2-title {
+    padding: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-clip: text;
+    animation: fadeIn 1s ease-in infinite;
+    color: #49b3f4;
+    text-shadow: 2px 2px var(--main-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.form-service {
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 5px rgb(35, 83, 156, 0.3);
+}
+
+.form-service-title {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.form-service-list {
+    color: var(--main-color);
+    line-height: 25px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.form-service-price_list {
+    padding: 20px;
+    line-height: 25px;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.service-1-contact {
+    color: var(--main-color);
+}
+
+.service-1-contact-button,
+.service-2-contact-button {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.service-1-contact-button .service-contact-button,
+.service-2-contact-button .service-contact-button{
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    color: #fff;
+    border-style: none;
+    border-radius: 90px 90px 90px 90px;
+    background-color: transparent;
+    background-image: linear-gradient(0, #3a437e, #4883fb);
+    opacity: 0.9;
+}
+
+.service-1-contact-button .service-contact-button:hover,
+.service-2-contact-button .service-contact-button:hover {
+    color: var(--main-color);
+    background-color: transparent;
+}
+
+/* Dịch Vụ 2 */
+.service-2-info-list {
+    padding-left: 0;
+}
+
+.service-2-info-list_item {
+    display: flex;
+    text-align: center;
+}
+
+.service-2-info-list_item--icon-check {
+    font-size: 25px;
+    margin-top: 3px;
+    color: var(--sub-color);
+}
+
+.service-2-info-list_item--title {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.service-2-info-list_price {
+    text-transform: capitalize;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: 800;
+    color: blueviolet;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ảnh dịch vụ */
+.service-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-img {
+    width: 100%;
+    height: auto;
+    margin: 40px;
+    border-radius: 5px;
+}
+
+/* Sản Phẩm */
+.Products {
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+.Products-title h1 {
+    text-align: center;
+    font-style: italic;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    animation: color-change 1s infinite alternate;
+}
+
+.Products-title h1:hover {
+    transform: translateY(10px);
+}
+
+@keyframes color-change {
+    from {
+      color: var(--main-color);
+    }
+    to {
+      color: #49b3f4;
+    }
+}
+
+.product-all {
+    padding: 10px;
+}
+
+.product-all_item {
+    padding: 10px;
+}
+
+.product-item {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s linear;
+}
+
+.product-item:hover {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);;
+    transform: translateX(10px);
+}
+
+.product-item_img--product {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.product-item_name {
+    height: 57px;
+    font-size: 17px;
+    line-height: 18px;
+    text-transform: capitalize;
+    text-align: center;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+}
+
+.product-item_price {
+    height: 46.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+.product-item_price--old {
+    font-size: 15px;
+    text-decoration: line-through;
+    color: #666;
+}
+.product-item_price--current {
+    color: #c64521;
+    font-weight: 600;
+}
+
+.product-button {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+    border-style: none;
+    background-color: transparent;
+    background-image: linear-gradient(0, #4883fb, #3a437e);
+    opacity: 0.9;
+}
+
+.btn.product-button:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+/* Liên Hệ */
+.contact-full {
+    background-color: #fff;
+}
+
+.contact-title {
+    font-size: 36px;
+    color: gray;
+    text-shadow: 2px 1px #aaa;
+}
+
+.contact-all {
+    font-size: 17px;
+    padding: 10px;
+}
+
+.contact-item-all {
+    display: flex;
+    cursor: pointer;
+}
+
+.contact-item {
+    margin-right: 10px;
+    color: gray;
+}
+
+.contact-item_title--main {
+    font-weight: 600;
+    color: #5d5b5b;
+}
+
+.contact-item_title {
+    color: #000;
+}
+
+.form-contact {
+    font-size: 17px;
+    padding: 10px;
+}
+
+.form-group {
+    padding-bottom: 20px;
+}
+
+.required-item {
+    color: red;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.form-group-button {
+    width: 20%;
+    color: #000;
+}
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+}
+
+.start-footer {
+    padding: 40px 0;
+    border-bottom: 1px solid #737373;
+}
+
+.start-footer_part {
+    padding-bottom: 40px;
+}
+
+.start-footer-main_title {
+    text-decoration: none;
+    color: #fff;
+}
+
+.start-footer-sub_title {
+    color: #c9c9c9;
+    margin-bottom: 15px;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+}
+
+.footer-item-all {
+    display: flex;
+    color: #c9c9c9
+}
+
+.footer-item-all:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.footer-item {
+    padding: 0 10px 0 0
+}
+
+.footer-item_title {
+    margin-bottom: 0;
+}
+
+.footer-socials {
+    display: flex;
+    font-size: 20px;
+    color: #737373;
+}
+
+.footer-socials-item {
+    color: #737373;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-socials-item:hover,
+.footer-service_list--item:hover {
+    color: #49b3f4;
+}
+
+.footer-socials-item_icon {
+    margin: 10px 20px 10px 0;
+    font-size: 22px;
+}
+
+.footer-service_title {
+    text-transform: uppercase;
+}
+
+.footer-service_list {
+    line-height: 30px;
+}
+
+.footer-service_list--item {
+    color: #c9c9c9;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-customer {
+    text-transform: uppercase;
+}
+
+.footer-customer_list {
+    color: #c9c9c9;
+    line-height: 30px;
+}
+
+.end-footer {
+    height: 90px;
+    display: flex;
+    color: #737373;
+    justify-content: space-between;
+    align-items: center;
+}
