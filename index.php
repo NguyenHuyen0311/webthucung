@@ -1,3 +1,7 @@
+<?php 
+  require_once 'connect.php';
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -264,22 +268,35 @@
           <h1>Sản Phẩm Vệ Sinh & Thức Ăn</h1>
         </div>
         <div class="row product-all">
-          <div class="col-sm-6 col-md-3 col-lg-2 product-all_item">
-            <div class="product-item">
-              <div class="product-item_img">
-                <img src="./assets/image/HatGanador.png" alt="Hạt Ganador" class="product-item_img--product">
-              </div>
-              <h4 class="product-item_name">Hạt Ganador Adult cho chó trưởng thành vị Bò gói 3kg</h4>
-              <div class="product-item_price">
-                <span class="product-item_price--old">180.000đ</span>
-                <span class="product-item_price--current">150.000đ</span>
-              </div>
-              <button class="btn btn-primary product-button" type="submit">
-                <span class="product-button-title">Thêm Vào Giỏ Hàng</span>
-              </button>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3 col-lg-2 product-all_item">
+          <?php 
+                $sql = "SELECT * FROM products";
+                $result = $conn->query($sql);
+                
+                if ($result->num_rows > 0) {
+                  while ($row = $result->fetch_assoc()) {
+                    echo '<div class="col-sm-6 col-md-3 col-lg-2 product-all_item">';
+                    echo '<div class="product-item">';
+                    echo '<div class="product-item_img">';
+                    echo '<img src="./assets/image/' . $row["image"] . '" alt="Product Image" class="product-item_img--product"><br>';
+                    echo '</div>';
+                    echo '<h4 class="product-item_name">'. $row["prd_name"] .'</h4>';
+                    echo '<div class="product-item_price">';
+                    echo '<span class="product-item_price--old">' . $row["old_price"] . '</span>';
+                    echo '<span class="product-item_price--current">' . $row["current_price"] . '</span>';
+                    echo '</div>';
+                    echo '<button class="btn btn-primary product-button" type="submit">
+                         <span class="product-button-title">Thêm Vào Giỏ Hàng</span>
+                         </button>';
+                    echo '</div>';
+                    echo '</div>';
+                  }
+                } else {
+                    echo "0 results";
+                }
+
+                $conn->close();
+              ?>
+          <!-- <div class="col-sm-6 col-md-3 col-lg-2 product-all_item">
             <div class="product-item">
               <div class="product-item_img">
                 <img src="./assets/image/pate.png" alt="Pate" class="product-item_img--product">
@@ -444,7 +461,7 @@
                 <span class="product-button-title">Thêm Vào Giỏ Hàng</span>
               </button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -510,7 +527,7 @@
                   Số Điện Thoại
                   <span class="required-item">*</span>
                 </label>
-                <input class="form-control" id="sđt" name="sđt" type="email" required>
+                <input class="form-control" id="sđt" name="sđt" type="tel" required>
               </div>
               <div class="col-sm-12 form-group">
                 <label for="note">Ghi Chú</label>
