@@ -296,7 +296,23 @@
 
                 $conn->close();
               ?>
+
           <!-- <div class="col-sm-6 col-md-3 col-lg-2 product-all_item">
+            <div class="product-item">
+              <div class="product-item_img">
+                <img src="./assets/image/HatGanador.png" alt="Ganador" class="product-item_img--product">
+              </div>
+              <h4 class="product-item_name">Hạt Ganador Adult Cho Chó Trưởng Thành Vị Bò Gói 3kg</h4>
+              <div class="product-item_price">
+                <span class="product-item_price--old">180.000đ</span>
+                <span class="product-item_price--current">150.000đ</span>
+              </div>
+              <button class="btn btn-primary product-button" type="submit">
+                <span class="product-button-title">Thêm Vào Giỏ Hàng</span>
+              </button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 col-lg-2 product-all_item">
             <div class="product-item">
               <div class="product-item_img">
                 <img src="./assets/image/pate.png" alt="Pate" class="product-item_img--product">
@@ -507,7 +523,7 @@
             </div>
           </div>
           <div class="col-sm-7 form-contact">
-            <form action="lienhe.php" method="post" class="row" enctype="multipart/form-data">
+            <form action="contact.php" method="post" class="row">
               <div class="col-sm-12 form-group">
                 <label for="username">
                   Họ Tên
@@ -520,21 +536,23 @@
                   Email
                   <span class="required-item">*</span>
                 </label>
-                <input class="form-control" id="email" name="email" type="email" required>
+                <input class="form-control" id="email" name="email" type="text" required>
               </div>
               <div class="col-sm-6 form-group">
                 <label for="sđt">
                   Số Điện Thoại
                   <span class="required-item">*</span>
                 </label>
-                <input class="form-control" id="sđt" name="sđt" type="tel" required>
+                <input class="form-control" id="sđt" name="sđt" pattern="[0-9]{10}" type="tel" required>
               </div>
               <div class="col-sm-12 form-group">
                 <label for="note">Ghi Chú</label>
                 <textarea class="form-control" id="note" name="note" placeholder="Chúng tôi luôn sẵn sàng giải đáp mọi thắc mắc của bạn" rows="5"></textarea><br>
               </div>
               <div class="col-sm-12 form-group">
-                <button type="button" class="btn btn-secondary form-group-button" name="lienhe">Gửi</button>
+                <input type="submit" class="btn btn-secondary form-group-button" name="btnContact" value="Gửi">
+              </div>
+              <div class="col-sm-6 form-group">
               </div>
             </form>
           </div>
