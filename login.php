@@ -31,24 +31,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <form action="login.php" method="post">
-        <div class="col-md-6">
-            <label for="username">Username</label>
-            <input type="text" name="username" class="form-control" id="username">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="login.php" method="post">
+                    <div class="col-md-6">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" class="form-control" id="username">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control" id="password">
+                    </div>
+                    <div class="col-md-6" style="margin-top: 20px;">
+                        <button type="submit" class="btn btn-primary" name="login">Đăng nhập</button>
+                        <button type="submit" class="btn btn-green" name="signup"><a href="signup.php">Đăng ký</a></button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="col-md-6">
-            <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" id="password">
-        </div>
-        <div class="col-md-6" style="margin-top: 20px;">
-            <button type="submit" class="btn btn-primary" name="login">Đăng nhập</button>
-            <button type="submit" class="btn btn-green" name="signup"><a href="signup.php">Đăng ký</a></button>
-        </div>
-    </form>
+    </div>
 </body>
 </html>

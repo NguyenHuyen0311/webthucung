@@ -227,6 +227,7 @@ button.btn.btn-light.service-button:hover {
 }
 
 .form-service {
+    margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 5px 5px 5px rgb(35, 83, 156, 0.3);
 }

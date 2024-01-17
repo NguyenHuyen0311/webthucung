@@ -208,11 +208,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="service-1-contact-button">
+                <a href="service.php" class="service-1-contact-button">
                   <button class="btn btn-primary service-contact-button" type="submit">
                     <span class="service-contact-button-title">Đặt lịch ngay</span>
                   </button>
-                </div>
+                </a>
               </div>
               <div class="service-2">
                 <h6 class="service-2-info">Thông Tin & Bảng Giá</h6>
@@ -246,11 +246,11 @@
                     Chỉ từ 400.000đ
                   </div>
                 </div>
-                <div class="service-2-contact-button">
+                <a href="service.php" class="service-2-contact-button">
                   <button class="btn btn-primary service-contact-button" type="submit">
                     <span class="service-contact-button-title">Đặt lịch ngay</span>
                   </button>
-                </div>
+                </a>
               </div>
             </div>
             <div class="col-md-6 service-banner">
@@ -536,7 +536,7 @@
                   Email
                   <span class="required-item">*</span>
                 </label>
-                <input class="form-control" id="email" name="email" type="text" required>
+                <input class="form-control" id="email" name="email" type="email" required>
               </div>
               <div class="col-sm-6 form-group">
                 <label for="sđt">
