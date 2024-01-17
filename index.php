@@ -46,12 +46,12 @@
             <a class="nav-link active navbar-page" aria-current="page" href="#ContactPage">Liên Hệ</a>
           </li>
         </ul>
-        <!-- <form class="d-flex">
+        <form class="d-flex">
           <input class="form-control me-2 customer-input" type="search" placeholder="Tìm kiếm" aria-label="Search">
           <button class="btn btn-primary button-search button-navbar" type="submit">
             <i class="fas fa-magnifying-glass"></i>
           </button>
-        </form> -->
+        </form>
       </div>
       <div class="navbar-icon">
         <div class="navbar-cart">
@@ -164,7 +164,7 @@
               <div class="service-1">
                 <h6 class="service-1-info">Thông Tin & Bảng Giá</h6>
                 <h1 class="service-1-title">Dịch vụ tắm vệ sinh</h1>
-                <div class="form-service">
+                <div class="form-service" style="margin-bottom: 20px;">
                   <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingTwo">
