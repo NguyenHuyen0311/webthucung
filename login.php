@@ -1,13 +1,15 @@
 <?php
+    session_start();
+    ob_start();
+
     require_once "connect.php";
 
-    session_start();
 
     if (isset($_SESSION['mySession'])) {
         header("location:index.php");
     }
 
-    if (isset($_POST['login'])) {
+    if (isset($_POST['login']) && ($_POST['login'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
         $login = "SELECT * FROM members WHERE username = '$username' AND password = '$password' ";
@@ -19,7 +21,7 @@
             header("location:index.php");
         }
         else {
-            echo "Tài khoản hoặc mật khẩu của bạn chưa đúng";
+            $txt = "Tài khoản hoặc mật khẩu của bạn chưa đúng";
         }
     }
 ?>
@@ -39,11 +41,11 @@
             <div class="col-md-12">
                 <form action="login.php" method="post">
                     <div class="col-md-6">
-                        <label for="username">Username</label>
+                        <label for="username">Họ và Tên</label>
                         <input type="text" name="username" class="form-control" id="username">
                     </div>
                     <div class="col-md-6">
-                        <label for="password">Password</label>
+                        <label for="password">Mật Khẩu</label>
                         <input type="password" name="password" class="form-control" id="password">
                     </div>
                     <div class="col-md-6" style="margin-top: 20px;">

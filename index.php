@@ -1,6 +1,7 @@
 <?php 
+  session_start();
   require_once 'connect.php';
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,9 +47,9 @@
             <a class="nav-link active navbar-page" aria-current="page" href="#ContactPage">Liên Hệ</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2 customer-input" type="search" placeholder="Tìm kiếm" aria-label="Search">
-          <button class="btn btn-primary button-search button-navbar" type="submit">
+        <form action="search.php" method="post" class="d-flex">
+          <input class="form-control me-2 customer-input" type="text" name="keyWord" placeholder="Tìm kiếm" aria-label="Search">
+          <button class="btn btn-primary button-search button-navbar" type="submit" name="timKiem">
             <i class="fas fa-magnifying-glass"></i>
           </button>
         </form>
@@ -58,8 +59,10 @@
           <i class="fa-solid fa-cart-shopping navbar-cart-icon"></i>
         </div>
         <div class="navbar-user">
-          <a href="login.php">
-            <i class="fa-solid fa-circle-user navbar-user-icon"></i>
+          <a href="logout.php">
+            <button type="submit" name="user" style="background-color: #f8f9fa; border: none;">
+              <i class="fa-solid fa-circle-user navbar-user-icon"></i>
+            </button>
           </a>
         </div>
       </div>
@@ -269,33 +272,33 @@
         </div>
         <div class="row product-all">
           <?php 
-                $sql = "SELECT * FROM products";
-                $result = $conn->query($sql);
-                
-                if ($result->num_rows > 0) {
-                  while ($row = $result->fetch_assoc()) {
-                    echo '<div class="col-sm-6 col-md-3 col-lg-2 product-all_item">';
-                    echo '<div class="product-item">';
-                    echo '<div class="product-item_img">';
-                    echo '<img src="./assets/image/' . $row["image"] . '" alt="Product Image" class="product-item_img--product"><br>';
-                    echo '</div>';
-                    echo '<h4 class="product-item_name">'. $row["prd_name"] .'</h4>';
-                    echo '<div class="product-item_price">';
-                    echo '<span class="product-item_price--old">' . $row["old_price"] . '</span>';
-                    echo '<span class="product-item_price--current">' . $row["current_price"] . '</span>';
-                    echo '</div>';
-                    echo '<button class="btn btn-primary product-button" type="submit">
-                         <span class="product-button-title">Thêm Vào Giỏ Hàng</span>
-                         </button>';
-                    echo '</div>';
-                    echo '</div>';
-                  }
-                } else {
-                    echo "0 results";
-                }
+            $sql = "SELECT * FROM products";
+            $result = $conn->query($sql);
+            
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                echo '<div class="col-sm-6 col-md-3 col-lg-2 product-all_item">';
+                echo '<div class="product-item">';
+                echo '<div class="product-item_img">';
+                echo '<img src="./assets/image/' . $row["image"] . '" alt="Product Image" class="product-item_img--product"><br>';
+                echo '</div>';
+                echo '<h4 class="product-item_name">'. $row["prd_name"] .'</h4>';
+                echo '<div class="product-item_price">';
+                echo '<span class="product-item_price--old">' . $row["old_price"] . '</span>';
+                echo '<span class="product-item_price--current">' . $row["current_price"] . '</span>';
+                echo '</div>';
+                echo '<button class="btn btn-primary product-button" type="submit">
+                      <span class="product-button-title">Thêm Vào Giỏ Hàng</span>
+                      </button>';
+                echo '</div>';
+                echo '</div>';
+              }
+            } else {
+                echo "0 results";
+            }
 
-                $conn->close();
-              ?>
+            $conn->close();
+          ?>
 
           <!-- <div class="col-sm-6 col-md-3 col-lg-2 product-all_item">
             <div class="product-item">
