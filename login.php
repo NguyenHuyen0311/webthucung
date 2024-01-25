@@ -1,15 +1,13 @@
 <?php
+    require_once "connect.php";
     session_start();
     ob_start();
-
-    require_once "connect.php";
-
 
     if (isset($_SESSION['mySession'])) {
         header("location:index.php");
     }
 
-    if (isset($_POST['login']) && ($_POST['login'])) {
+    if (isset($_POST['login']) ) {
         $username = $_POST['username'];
         $password = $_POST['password'];
         $login = "SELECT * FROM members WHERE username = '$username' AND password = '$password' ";
@@ -21,7 +19,7 @@
             header("location:index.php");
         }
         else {
-            $txt = "Tài khoản hoặc mật khẩu của bạn chưa đúng";
+            echo "Tài khoản hoặc mật khẩu của bạn chưa đúng";
         }
     }
 ?>

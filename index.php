@@ -26,7 +26,7 @@
       <a class="navbar-brand" href="#myPage">
         <img src="./assets/image/logo.jpg" alt="Logo" class="navbar-logo">
       </a>
-      <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -58,13 +58,42 @@
         <div class="navbar-cart">
           <i class="fa-solid fa-cart-shopping navbar-cart-icon"></i>
         </div>
-        <div class="navbar-user">
-          <a href="logout.php">
-            <button type="submit" name="user" style="background-color: #f8f9fa; border: none;">
+        <?php
+          if (isset($_SESSION['mySession'])) {
+            echo '<div class="btn-group" style="width: 150px">
+              <div class="navbar-user">
+                <a href="login.php">
+                  <button type="submit" name="user" style="background-color: #f8f9fa; border: none;">
+                    <i class="fa-solid fa-circle-user navbar-user-icon"></i>
+                  </button>
+                </a>
+              </div>
+              <button type="button" class="btn btn-danger" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #f8f9fa; color: #000; border: none; width: 60px;">
+                <span class="visually-hidden">Toggle Dropdown</span>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              </button>
+              <ul class="dropdown-menu">';
+                $level = "level";
+                $sql = "SELECT * FROM `members` WHERE username = '".$_SESSION['mySession']."'";
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)) {
+                      if($row[$level] == 1){
+                        echo '<li><a class="dropdown-item" href="admin.php">Quản lí cửa hàng</a></li>';
+                      }
+                  }
+                }
+                echo '<li><a class="dropdown-item" href="logout.php">Đăng Xuất</a></li>
+              </ul>
+            </div>';
+          } else{
+            echo '<div class="navbar-user">
+            <a href="login.php">
               <i class="fa-solid fa-circle-user navbar-user-icon"></i>
-            </button>
-          </a>
-        </div>
+            </a>
+          </div>';
+        }
+        ?>
       </div>
     </div>
   </nav>
@@ -211,11 +240,30 @@
                     </div>
                   </div>
                 </div>
-                <a href="service.php" class="service-1-contact-button">
-                  <button class="btn btn-primary service-contact-button" type="submit">
-                    <span class="service-contact-button-title">Đặt lịch ngay</span>
-                  </button>
-                </a>
+                <?php
+                  if (isset($_SESSION['mySession'])) {
+                    $level = "level";
+                    $sql = "SELECT * FROM `members` WHERE username = '".$_SESSION['mySession']."'";
+                    $result = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                      while($row = mysqli_fetch_assoc($result)) {
+                          if($row[$level] == 1 || $row[$level] == 2){
+                            echo '<a href="service.php" class="service-1-contact-button">
+                              <button class="btn btn-primary service-contact-button" type="submit">
+                                <span class="service-contact-button-title">Đặt lịch ngay</span>
+                              </button>
+                            </a>';
+                          }
+                        }
+                    }
+                  }else {
+                    echo '<a href="login.php" class="service-1-contact-button">
+                      <button class="btn btn-primary service-contact-button" type="submit">
+                        <span class="service-contact-button-title">Đặt lịch ngay</span>
+                      </button>
+                    </a>';
+                  }
+                ?>
               </div>
               <div class="service-2">
                 <h6 class="service-2-info">Thông Tin & Bảng Giá</h6>
@@ -249,11 +297,30 @@
                     Chỉ từ 400.000đ
                   </div>
                 </div>
-                <a href="service.php" class="service-2-contact-button">
-                  <button class="btn btn-primary service-contact-button" type="submit">
-                    <span class="service-contact-button-title">Đặt lịch ngay</span>
-                  </button>
-                </a>
+                <?php
+                  if (isset($_SESSION['mySession'])) {
+                    $level = "level";
+                    $sql = "SELECT * FROM `members` WHERE username = '".$_SESSION['mySession']."'";
+                    $result = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                      while($row = mysqli_fetch_assoc($result)) {
+                          if($row[$level] == 1 || $row[$level] == 2){
+                            echo '<a href="service.php" class="service-1-contact-button">
+                              <button class="btn btn-primary service-contact-button" type="submit">
+                                <span class="service-contact-button-title">Đặt lịch ngay</span>
+                              </button>
+                            </a>';
+                          }
+                        }
+                    }
+                  }else {
+                    echo '<a href="login.php" class="service-1-contact-button">
+                      <button class="btn btn-primary service-contact-button" type="submit">
+                        <span class="service-contact-button-title">Đặt lịch ngay</span>
+                      </button>
+                    </a>';
+                  }
+                ?>
               </div>
             </div>
             <div class="col-md-6 service-banner">

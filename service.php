@@ -47,6 +47,13 @@ $conn->close();
     </style>
 </head>
 <body>
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="index.php">
+                <button name="btnBack" class="btn btn-primary" type="submit">Về Trang Chủ</button>
+            </a>
+        </div>
+    </div>
     <div class="container col-sm-7 form-contact">
         <form action="service.php" method="post" class="row" enctype="multipart/form-data">
             <div class="col-sm-12 form-group">
@@ -208,11 +215,6 @@ $conn->close();
                 <button type="submit" class="btn btn-secondary form-group-button" name="dichvu">GỬI YÊU CẦU</button>
             </div>
         </form>
-        <div class="col-sm-6">
-            <a href="index.php">
-                <button name="btnBack" class="btn btn-primary" type="submit">Về Trang Chủ</button>
-            </a>
-        </div>
     </div>
 </body>
 </html>
