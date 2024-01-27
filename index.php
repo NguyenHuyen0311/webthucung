@@ -92,7 +92,7 @@
               <i class="fa-solid fa-circle-user navbar-user-icon"></i>
             </a>
           </div>';
-        }
+          }
         ?>
       </div>
     </div>
