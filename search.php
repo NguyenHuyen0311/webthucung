@@ -1,16 +1,14 @@
 <?php 
     require_once "connect.php";
 
-    if (isset($_POST['timKiem'])) {
+    if (isset($_POST['timKiem']) && !empty($_POST['keyWord'])) {
         $keyWord = $_POST['keyWord'];
-    }else {
-        $keyWord = "";
+        $search = "SELECT * FROM products WHERE products.prd_name LIKE '%".$keyWord."%' OR products.old_price LIKE '%".$keyWord."%' OR products.current_price LIKE '%".$keyWord."%'";
+    
+        $sql = mysqli_query($conn, $search);
+    } else {
+        header("location:index.php");
     }
-
-    $search = "SELECT * FROM products WHERE products.prd_name LIKE '%".$keyWord."%' OR products.old_price LIKE '%".$keyWord."%' OR products.current_price LIKE '%".$keyWord."%'";
-
-    $sql = mysqli_query($conn, $search);
-
 ?> 
 
 <!DOCTYPE html>
